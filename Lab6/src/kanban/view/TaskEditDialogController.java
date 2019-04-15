@@ -19,7 +19,7 @@ public class TaskEditDialogController {
     @FXML
     private TextField titleInput;
     @FXML
-    private ComboBox<String> priorityInput;
+    private ComboBox<Priority> priorityInput;
     @FXML
     private TextField textInput;
 
@@ -31,9 +31,9 @@ public class TaskEditDialogController {
 
     @FXML
     private void initialize() {
-        priorityInput.getItems().add("Low");
-        priorityInput.getItems().add("Medium");
-        priorityInput.getItems().add("High");
+        priorityInput.getItems().add(Priority.LOW);
+        priorityInput.getItems().add(Priority.MEDIUM);
+        priorityInput.getItems().add(Priority.HIGH);
         priorityInput.getSelectionModel().selectFirst();
         dateInput.setValue(LocalDate.now());
     }
@@ -48,10 +48,11 @@ public class TaskEditDialogController {
         this.task = task;
 
         titleInput.setText(task.getTitle());
-//        priorityInput.setSelectionModel(task.getPriority());
+        priorityInput.setValue(task.getPriority());
         textInput.setText(task.getText());
 //        dateField.setText(DateUtil.format(task.getDate()));
 //        dateField.setPromptText("dd.mm.yyyy");
+        dateInput.setValue(dateInput.getValue());
     }
 
     public boolean isOkClicked() {
@@ -63,7 +64,7 @@ public class TaskEditDialogController {
     private void handleOk() {
         if (isInputValid()) {
             task.setTitle(titleInput.getText());
-            task.setPriority(priorityInput.getAccessibleText());
+            task.setPriority(priorityInput.getSelectionModel().getSelectedItem());
             task.setText(textInput.getText());
             task.setDate(dateInput.getValue());
 

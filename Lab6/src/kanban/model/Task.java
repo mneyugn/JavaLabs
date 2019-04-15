@@ -7,13 +7,13 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import kanban.view.Priority;
 
 import java.time.LocalDate;
 
 public class Task {
-    private Task task;
     private StringProperty title;
-    private StringProperty priority;
+    private Priority priority;
     private LocalDate date;
     private StringProperty text;
 
@@ -26,7 +26,7 @@ public class Task {
 
     public Task() {
         this.title =  new SimpleStringProperty("");
-        this.priority = new SimpleStringProperty("");
+        this.priority = Priority.LOW;
         this.date = LocalDate.of(2000, 1, 1);
         this.text = new SimpleStringProperty("");
 
@@ -35,9 +35,9 @@ public class Task {
 
     }
 
-    public Task(String title, String priority, LocalDate date, String text) {
+    public Task(String title, Priority priority, LocalDate date, String text) {
         this.title = new SimpleStringProperty(title);
-        this.priority = new SimpleStringProperty(priority);
+        this.priority = priority;
         this.date = date;
         this.text = new SimpleStringProperty(text);
     }
@@ -58,10 +58,6 @@ public class Task {
         this.title.set(title);
     }
 
-    public void setPriority(String priority) {
-        this.priority.set(priority);
-    }
-
     public void setDate(LocalDate date) {
         this.date = date;
     }
@@ -74,12 +70,12 @@ public class Task {
         return title;
     }
 
-    public String getPriority() {
-        return priority.get();
+    public Priority getPriority() {
+        return priority;
     }
 
-    public StringProperty priorityProperty() {
-        return priority;
+    public void setPriority(Priority priority) {
+        this.priority = priority;
     }
 
     public LocalDate getDate() {

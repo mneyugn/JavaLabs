@@ -13,6 +13,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import kanban.model.Task;
+import kanban.view.Priority;
 import kanban.view.TaskEditDialogController;
 import kanban.view.TaskOverviewController;
 /**
@@ -29,9 +30,9 @@ public class MainApp extends Application {
 
     public MainApp() {
         // Add some sample data
-        taskData.add(new Task("TASK 1","Low", LocalDate.now(), "TEXT 1"));
-        taskData.add(new Task("TASK 2","high", LocalDate.now(), "TEXT 2"));
-        taskData.add(new Task("TASK 3","Low", LocalDate.now(), "TEXT 3"));
+        taskData.add(new Task("TASK 1", Priority.LOW, LocalDate.now(), "TEXT 1"));
+        taskData.add(new Task("TASK 2",Priority.LOW, LocalDate.now(), "TEXT 2"));
+        taskData.add(new Task("TASK 3",Priority.LOW, LocalDate.now(), "TEXT 3"));
     }
 
     public ObservableList<Task> getTaskData() {
@@ -41,7 +42,7 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("AddressApp");
+        this.primaryStage.setTitle("Kanban board");
 
         initRootLayout();
         showTaskOverview();
