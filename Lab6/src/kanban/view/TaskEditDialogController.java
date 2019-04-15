@@ -92,9 +92,9 @@ public class TaskEditDialogController {
             alert.setTitle("Invalid Fields");
             alert.setHeaderText("Please correct invalid fields");
             alert.setContentText(errorMessage);
-            
+
             alert.showAndWait();
-            
+
             return false;
         }
     }

@@ -13,21 +13,11 @@ public class Task {
     private StringProperty text;
 
 
-//    private ObjectProperty<ImageView> image;
-//    public ObjectProperty imageProperty() {
-//        return image;
-//    }
-
-
     public Task() {
         this.title =  new SimpleStringProperty("");
         this.priority = Priority.LOW;
-        this.date = LocalDate.of(2000, 1, 1);
+        this.date = LocalDate.now();
         this.text = new SimpleStringProperty("");
-
-//        if(priority.toString().equals("High"))
-//        image = new SimpleObjectProperty<>(new ImageView(new Image("red.png")));
-
     }
 
     public Task(String title, Priority priority, LocalDate date, String text) {

@@ -63,6 +63,8 @@ public class TaskOverviewController {
                 });
 
         toDoTable.getColumns().forEach(this::addTooltipToColumnCells);
+        inProgressTable.getColumns().forEach(this::addTooltipToColumnCells);
+        doneTable.getColumns().forEach(this::addTooltipToColumnCells);
     }
 
     private <T> void addTooltipToColumnCells(TableColumn<Task,T> column) {
