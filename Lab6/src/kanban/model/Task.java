@@ -1,19 +1,27 @@
-package sample.model;
+package kanban.model;
 
-import javafx.beans.InvalidationListener;
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.time.LocalDate;
 
 public class Task {
+    private Task task;
     private StringProperty title;
     private StringProperty priority;
     private LocalDate date;
     private StringProperty text;
+
+
+//    private ObjectProperty<ImageView> image;
+//    public ObjectProperty imageProperty() {
+//        return image;
+//    }
 
 
     public Task() {
@@ -21,6 +29,10 @@ public class Task {
         this.priority = new SimpleStringProperty("");
         this.date = LocalDate.of(2000, 1, 1);
         this.text = new SimpleStringProperty("");
+
+//        if(priority.toString().equals("High"))
+//        image = new SimpleObjectProperty<>(new ImageView(new Image("red.png")));
+
     }
 
     public Task(String title, String priority, LocalDate date, String text) {
@@ -78,4 +90,5 @@ public class Task {
     public String toString() {
         return title.toString();
     }
+
 }
