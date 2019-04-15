@@ -50,9 +50,7 @@ public class TaskEditDialogController {
         titleInput.setText(task.getTitle());
         priorityInput.setValue(task.getPriority());
         textInput.setText(task.getText());
-//        dateField.setText(DateUtil.format(task.getDate()));
-//        dateField.setPromptText("dd.mm.yyyy");
-        dateInput.setValue(dateInput.getValue());
+        dateInput.setValue(task.getDate());
     }
 
     public boolean isOkClicked() {
@@ -85,6 +83,7 @@ public class TaskEditDialogController {
         if (titleInput.getText() == null || titleInput.getText().length() == 0) {
             errorMessage += "No valid title!\n";
         }
+        
         if (textInput.getText() == null || textInput.getText().length() == 0) {
             errorMessage += "No valid text!\n";
         }
