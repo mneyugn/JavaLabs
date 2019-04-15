@@ -67,7 +67,7 @@ public class MainApp extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/TaskOverview.fxml"));
-            AnchorPane taskOverview = (AnchorPane) loader.load();
+            AnchorPane taskOverview = loader.load();
 
             rootLayout.setCenter(taskOverview);
 
@@ -84,7 +84,7 @@ public class MainApp extends Application {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/AddTask.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Edit Task");
@@ -104,10 +104,6 @@ public class MainApp extends Application {
             e.printStackTrace();
             return false;
         }
-    }
-
-    public Stage getPrimaryStage() {
-        return primaryStage;
     }
 
     public static void main(String[] args) {

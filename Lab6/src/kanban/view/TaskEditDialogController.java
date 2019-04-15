@@ -11,7 +11,6 @@ import kanban.model.Task;
 
 import java.time.LocalDate;
 
-
 public class TaskEditDialogController {
 
     @FXML
@@ -22,8 +21,6 @@ public class TaskEditDialogController {
     private ComboBox<Priority> priorityInput;
     @FXML
     private TextField textInput;
-
-
 
     private Stage dialogStage;
     private Task task;
@@ -76,14 +73,12 @@ public class TaskEditDialogController {
         dialogStage.close();
     }
 
-
     private boolean isInputValid() {
         String errorMessage = "";
 
         if (titleInput.getText() == null || titleInput.getText().length() == 0) {
             errorMessage += "No valid title!\n";
         }
-        
         if (textInput.getText() == null || textInput.getText().length() == 0) {
             errorMessage += "No valid text!\n";
         }

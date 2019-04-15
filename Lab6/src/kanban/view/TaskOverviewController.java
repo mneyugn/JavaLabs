@@ -111,12 +111,13 @@ public class TaskOverviewController {
             doneTable.getItems().add(inProgressToDone);
             inProgressTable.getItems().remove(inProgressToDone);
         }
+        toDoTable.getSelectionModel().clearSelection();
+        inProgressTable.getSelectionModel().clearSelection();
+        doneTable.getSelectionModel().clearSelection();
     }
 
 
     public void movePrevHandler() {
-
-        // todo: change - many selections at the same time on several boards
         Task inProgressToToDo = inProgressTable.getSelectionModel().getSelectedItem();
         if (inProgressToToDo != null) {
             inProgressTable .getItems().remove(inProgressToToDo);
@@ -128,5 +129,8 @@ public class TaskOverviewController {
             doneTable.getItems().remove(doneToInProgress);
             inProgressTable.getItems().add(doneToInProgress);
         }
+        toDoTable.getSelectionModel().clearSelection();
+        inProgressTable.getSelectionModel().clearSelection();
+        doneTable.getSelectionModel().clearSelection();
     }
 }
