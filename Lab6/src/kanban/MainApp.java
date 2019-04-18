@@ -16,9 +16,9 @@ import kanban.model.Task;
 import kanban.view.Priority;
 import kanban.view.TaskEditDialogController;
 import kanban.view.TaskOverviewController;
+
 /**
  * Kanban board
- *
  * @author Marcin Nguyen
  */
 public class MainApp extends Application {
@@ -31,8 +31,8 @@ public class MainApp extends Application {
     public MainApp() {
         // Add some sample data
         taskData.add(new Task("TASK 1", Priority.LOW, LocalDate.now(), "TEXT 1"));
-        taskData.add(new Task("TASK 2",Priority.LOW, LocalDate.now(), "TEXT 2"));
-        taskData.add(new Task("TASK 3",Priority.LOW, LocalDate.now(), "TEXT 3"));
+        taskData.add(new Task("TASK 2", Priority.LOW, LocalDate.now(), "TEXT 2"));
+        taskData.add(new Task("TASK 3", Priority.LOW, LocalDate.now(), "TEXT 3"));
     }
 
     public ObservableList<Task> getTaskData() {
@@ -78,6 +78,7 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
+
 
     public boolean showTaskEditDialog(Task task) {
         try {

@@ -36,9 +36,6 @@ public class TaskOverviewController {
         toDoColumn.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
         inProgressColumn.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
         doneColumn.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
-        // todo: image to task priority
-//        priorityToDoImage.setCellValueFactory(cellData -> cellData.getValue().imageProperty());
-
 
         // context menu
         toDoTable.setRowFactory(

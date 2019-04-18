@@ -17,8 +17,7 @@ public class RootLayoutController {
         informationAlert.setHeaderText("Information");
         informationAlert.setContentText("Marcin Nguyen\n" +
                 "Applied Computer Science\n"+
-                "AGH University of Science and Technology\n" +
-                "Faculty od Metals Engineering and Industrial Computer Science\n" );
+                "AGH University of Science and Technology\n");
         informationAlert.showAndWait();
     }
 }
